@@ -1,0 +1,60 @@
+{% extends "AppSalud/base.html" %}
+{% load static %}
+
+{% block title %}
+    Sede Clínica
+{% endblock title %}
+
+{% block codigoDinamico %}
+<div class="container"> 
+    <br>
+    <h1><u>Nuestras Sedes</u></h1>
+    <br>
+
+    <div class="container">
+        <table class="table table-hover text-center">
+            <thead>
+                <tr>
+                    <th scope="col">Localidad</th>
+                    <th scope="col">Teléfono de la Sede</th>
+                    <th scope="col">Dirección de la Sede</th>
+                    <th scope="col">Email de la Sede</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for Sede_clinica in sede_clinica %}
+                <tr class="table-secondary">
+                    <td>{{ Sede_clinica.id_localidad }}</td>
+                    <td>{{ Sede_clinica.telefono_sede }}</td>
+                    <td>{{ Sede_clinica.direccion_sede }}</td>
+                    <td>{{ Sede_clinica.email_sede }}</td>
+                    <td>
+                        <button type="button" class="btn btn-outline-warning">
+                            <a href="{% url 'Actualizar_Sede' direccion_sede=Sede_clinica.direccion_sede %}" style="color: orange;">Actualizar Sede</a>
+                        </button>
+                        <button type="button" class="btn btn-outline-primary">
+                            <a href="{% url 'Eliminar_Sede' direccion_sede=Sede_clinica.direccion_sede %}" style="color: red;">Eliminar Sede</a>
+                        </button>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="5">No hay sedes disponibles.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container">
+        <button type="button" class="btn btn-outline-success">
+            <a href="{% url 'Crear_Sede' %}" style="color: green;">Agregar Sede</a>
+        </button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="button" class="btn btn-outline-info">
+            <a href="{% url 'Buscar_Sede' %}" style="color: #337ab7;">Buscar Sede</a>
+        </button>
+    </div>
+</div>
+{% endblock %}

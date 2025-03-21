@@ -1,0 +1,46 @@
+{% extends 'AppSalud/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Buscar N° de Matricula
+{% endblock title %}
+
+{% block codigoDinamico %}
+
+<div class="container">
+    <br> <br> 
+    <form action="" method="get">
+
+        <input type="text" name="matricula" id="numero matricula" 
+            placeholder="00000">
+    <br> <br>
+        <input type="submit" value="Buscar N° Matricula" class="btn btn-outline-info">
+    </form>
+
+    <br><br>
+
+    {% if matriculas%}
+        
+        {% for matricula in matriculas %}
+        <table class="table table-active text-center">
+            <th scope="col">N° Matricula:</th>
+            <th scope="col">N° legajo:</th>
+            <th scope="col">Años de Servicio:</th>
+            <th scope="col">N° de Pacientes Atendidos:</th>
+            <tr class="table-success text-center">
+                <td>{{matricula.matricula}}</td>
+                <td>{{matricula.numero_legajo}}</td>
+                <td>{{matricula.años_de_servicio}}</td>
+                <td>{{matricula.pacientes_atendidos}}</td>
+            </tr>
+        </table>
+        {% endfor %}       
+    {% else %}
+
+            <h3>No Se Encontro la Matricula</h3>
+    {% endif %}
+</div>
+
+
+{% endblock %}

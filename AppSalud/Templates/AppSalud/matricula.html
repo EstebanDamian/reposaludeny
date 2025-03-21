@@ -1,0 +1,58 @@
+{% extends "AppSalud/base.html" %}
+{% load static %}
+
+{% block title %}
+    Matrículas
+{% endblock title %}
+
+{% block codigoDinamico %}
+
+<div class="container"> 
+<body style='background-color: lightgrey;'>
+    <div class="container">
+        <br>
+        <h1><u>Matrículas de los Médicos</u></h1>
+        <br>
+        <div class="container" style="background-color:#eb6864;">
+            <table class="table table-active text-center">
+                <thead>
+                    <tr>
+                        <th scope="col">Matrícula:</th>
+                        <th scope="col">N° Legajo:</th>
+                        <th scope="col">Años de Servicio:</th>
+                        <th scope="col">Pacientes Atendidos:</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for matricula in matricula %}
+                    <tr class="table-success text-center">
+                        <td>{{matricula.matricula}}</td>
+                        <td>{{matricula.numero_legajo}}</td>
+                        <td>{{matricula.años_de_servicio}}</td>
+                        <td>{{matricula.pacientes_atendidos}}</td>
+                        <td>
+                            <button type="button" class="btn btn-outline-warning">
+                                <a href="{% url 'Actualizar_Matricula' matricula_id=matricula.matricula %}" style='color: orange;'>Actualizar Matrícula</a>
+                            </button>
+                            <button type="button" class="btn btn-outline-primary">
+                                <a href="{% url 'Eliminar_Matricula' matricula_id=matricula.matricula %}" style='color: red;'>Eliminar Matrícula</a>
+                            </button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="container">
+            <button type="button" class="btn btn-outline-success">
+                <a href="{% url 'Crear_Matricula' %}" style='color: green;'>Agregar Matrícula</a>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button type="button" class="btn btn-outline-info">
+                <a href="{% url 'Buscar_numero_matricula' %}" style='color: #337ab7;'>Buscar N° Matrícula</a>
+            </button>
+        </div>
+    </div>
+</body>
+{% endblock %}

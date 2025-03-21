@@ -1,0 +1,90 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salud & Bienestar</title>
+    <link href='https://bootswatch.com/5/journal/bootstrap.min.css' rel='stylesheet'/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="{% static "styles.css" %}" rel='stylesheet'/>
+    <link rel="icon" href="{% static 'AppSalud/favicon.jpg' %}">
+    <title>
+        {% block title %}
+        {% endblock title %}
+    </title>
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'Home' %}"><img src="{% static 'salud.jpg' %}" width="60" height="60"> AppSalud</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Cambiar navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav me-auto">
+                    
+                    {% if request.user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'Numeros_de_Turnos' %}">Turnos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'Medicos' %}">Medicos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'Matricula' %}">Matriculas</a>
+                    </li>
+                
+                    <li class="nav-item">
+                    <a class="nav-link" href="{% url 'Coberturas' %}">Coberturas</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                    <a class="nav-link" href="{% url 'Especialidades' %}">Especialidades</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="{% url 'Localidades' %}">Localidades</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="{% url 'Pacientes' %}">Pacientes</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="{% url 'Sedesclinicas' %}">Sedes</a>
+                    </li>
+                    
+                    <li class="nav-item1">
+                        <a class="nav-link1" href="{% url 'Logout' %}">Cerrar Sesion</a>
+                    </li>&nbsp;&nbsp;&nbsp;
+                    <div class="container1">
+                        {% if request.user.is_authenticated %}
+                        <br>
+                        <p><div class="nombre">{{user.username}},</div><br>
+                            Bienvenido a 
+                            AppSalud
+                        </p>
+                        
+                        {% else %}
+                        
+                        {% endif %}
+                        </div>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'Login' %}">Iniciar Sesion</a>
+                    </li>&nbsp;&nbsp;&nbsp;
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'Registro' %}">Registrarse</a>
+                    </li>
+                    {% endif %}
+                </ul>
+                
+            </div>
+        </div>
+    </nav><br>
+    
+    {% block codigoDinamico %}
+    {% endblock %}
+</body>
+</html>

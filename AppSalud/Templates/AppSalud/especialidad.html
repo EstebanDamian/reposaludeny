@@ -1,0 +1,50 @@
+{% extends "AppSalud/base.html" %}
+{% load static %}
+
+{% block title %}
+    Especialidades
+{% endblock title %}
+
+{% block codigoDinamico %}
+
+<div class="container"> 
+    <h1><u>Nuestras Especialidades</u></h1>
+    <br>
+    <div class="container" style="background-color:#eb6864;">
+        <table class="table table-active text-center">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre de Especialidad</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for especialidad in especialidad %}
+                <tr class="table-secondary text-center">
+                    <td>{{ especialidad.nombre_especialidad }}</td>
+                    <td>
+                        <button type="button" class="btn btn-outline-warning">
+                            <a href="{% url 'Actualizar_Especialidades' nombre_especialidad=especialidad.nombre_especialidad %}" style='color: orange;'>Actualizar Especialidad</a>
+                        </button>
+                        <button type="button" class="btn btn-outline-primary">
+                            <a href="{% url 'Eliminar_Especialidades' nombre_especialidad=especialidad.nombre_especialidad %}" style='color: red;'>Eliminar Especialidad</a>
+                        </button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <div class="container">
+        <button type="button" class="btn btn-outline-success">
+            <a href="{% url 'Crear_Especialidades' %}" style='color: green;'>Nueva Especialidad</a>
+        </button>
+        &nbsp;&nbsp;&nbsp;
+        <button type="button" class="btn btn-outline-info">
+            <a href="{% url 'Buscar_Especialidades' %}" style='color: #337ab7;'>Buscar Especialidad</a>
+        </button>
+    </div>
+</div>
+
+{% endblock %}

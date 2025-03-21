@@ -1,0 +1,55 @@
+{% extends "AppSalud/base.html" %}
+{% load static %}
+
+{% block title %}
+    Coberturas
+{% endblock title %}
+
+{% block codigoDinamico %}
+
+<div class="container"> 
+<body style='background-color: #f1e5db;'>
+    <div class="container">
+        <br>
+        <h1><u>Nuestras Coberturas</u></h1>
+        <br>
+        <div class="container" style="background-color:#eb6864;">
+            <table class="table table-active text-center">
+                <thead>
+                    <tr>
+                        <th scope="col">ID:</th>
+                        <th scope="col">Nombre de la Cobertura:</th>
+                      
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for cobertura in cobertura %}
+                    <tr class="table-success text-center">
+                        <td> {{cobertura.id}} </td>
+                        <td> {{cobertura.nombre_cobertura}} </td>
+                        
+                        <td>
+                            <button type="button" class="btn btn-outline-warning">
+                                <a href="{% url 'Actualizar_Coberturas' nombre_cobertura=cobertura.nombre_cobertura %}" style='color: orange;'>Actualizar Cobertura</a>
+                            </button>
+                            <button type="button" class="btn btn-outline-primary">
+                                <a href="{% url 'Eliminar_Coberturas' nombre_cobertura=cobertura.nombre_cobertura %}" style='color: red;'>Eliminar Cobertura</a>
+                            </button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="container">
+            <button type="button" class="btn btn-outline-success">
+                <a href="{% url 'Crear_Coberturas' %}" style='color: green;'>Crear Cobertura</a>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button type="button" class="btn btn-outline-info">
+                <a href="{% url 'Buscar_Coberturas' %}" style='color: #337ab7;'>Buscar Cobertura</a>
+            </button>
+        </div>
+    </div>
+</body>
+{% endblock %}

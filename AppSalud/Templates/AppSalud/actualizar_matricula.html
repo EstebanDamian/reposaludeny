@@ -1,0 +1,28 @@
+{% extends 'AppSalud/base.html' %}
+
+{% load static %}
+
+    {% block title %}
+        Actualizar Matricula
+    {% endblock title %}
+
+{% block codigoDinamico %}
+
+<div class="container">
+    <form action="" method="post">
+        {% csrf_token %}
+        <br> <br>
+        <h1>Actualizar Datos de una Matricula</h1>
+        <br> <br>
+        <table>
+            {{form.as_table}}
+        </table>
+        <br> <br>
+        <div class="container">
+            <button type="submit" class="btn btn-outline-danger" style='color: orange;'>Actualizar Matricula</button>
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends "AppSalud/base.html" %}
+{% load static %}
+
+{% block title %}
+    Médicos
+{% endblock title %}
+
+{% block codigoDinamico %}
+
+<div class="container"> 
+<body>
+    <div class="container">
+        <br>
+        <h1><u>Lista de Médicos</u></h1>
+        <br>
+        <div class="container">
+            <table class="table table-active text-center">
+                <thead>
+                    <tr>
+                        <th scope="col">ID:</th>
+                        <th scope="col">Especialidad:</th>
+                        <th scope="col">Nombre:</th>
+                        <th scope="col">Apellido:</th>
+                        <th scope="col">DNI:</th>
+                        <th scope="col">Matrícula:</th>
+                        <th scope="col">Sede de Atención:</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for medico in medico %}
+                    <tr class="table-success text-center">
+                        <td>{{medico.id}}</td>
+                        <td>{{medico.id_especialidad.nombre_especialidad}}</td>
+                        <td>{{medico.nombre_medico}}</td>
+                        <td>{{medico.apellido_medico}}</td>
+                        <td>{{medico.dni_medico}}</td>
+                        <td>{{medico.id_matricula.matricula}}</td>
+                        <td>{{medico.id_sede.id_localidad.localidad}}</td>
+                        <td>
+                            <button type="button" class="btn btn-outline-warning">
+                                <a href="{% url 'Actualizar_Medico' medico_id=medico.id %}" style='color: orange;'>Actualizar Médico</a>
+                            </button>
+                            <button type="button" class="btn btn-outline-primary">
+                                <a href="{% url 'Eliminar_Medico' medico_id=medico.id %}" style='color: red;'>Eliminar Médico</a>
+                            </button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="container">
+            <button type="button" class="btn btn-outline-success">
+                <a href="{% url 'Crear_Medico' %}" style='color: green;'>Agregar Médico</a>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button type="button" class="btn btn-outline-info">
+                <a href="{% url 'Buscar_nombre_medico' %}" style='color: #337ab7;'>Buscar Médico</a>
+            </button>
+        </div>
+    </div>
+</body>
+{% endblock %}

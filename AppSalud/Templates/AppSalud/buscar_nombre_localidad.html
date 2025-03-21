@@ -1,0 +1,43 @@
+{% extends 'AppSalud/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Buscar Localidad
+{% endblock title %}
+
+{% block codigoDinamico %}
+
+<div class="container">
+    <br> <br> 
+    <form action="" method="get">
+
+        <input type="text" name="localidad" id="nombre localidad2" 
+            placeholder="Nombre de la Localidad">
+    <br> <br>
+        <input type="submit" value="Buscar Localidad por Nombre" class="btn btn-outline-info">
+    </form>
+
+    <br><br>
+
+    {% if localidades %}
+        
+        {% for localidad in localidades %}
+            <table class="table table-active text-center">
+                <th scope="col">Localidad:</th>
+                
+                
+                <tr class="table-success text-center">
+                    <td>{{localidad.localidad}}</td>
+                    
+                </tr>
+            </table>
+        {% endfor %}       
+    {% else %}
+
+            <h3>No Se Encontro Localidad</h3>
+    {% endif %}
+</div>
+
+
+{% endblock %}

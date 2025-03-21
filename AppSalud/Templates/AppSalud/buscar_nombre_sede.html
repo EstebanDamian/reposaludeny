@@ -1,0 +1,49 @@
+{% extends 'AppSalud/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Buscar Sede
+{% endblock title %}
+
+{% block codigoDinamico %}
+
+<div class="container">
+    <br> <br> 
+    <form action="" method="get">
+
+        <input type="text" name="direccion_sede" id="direccion_sede" 
+            placeholder="Dirección de la Sede">
+    <br> <br>
+        <input type="submit" value="Buscar Sede por Dirección" class="btn btn-outline-info">
+    </form>
+
+    <br><br>
+
+    {% if sedes %}
+        <table class="table table-active text-center">
+            <thead>
+                <tr>
+                    <th scope="col">Localidad de la Sede</th>
+                    <th scope="col">Teléfono de la Sede</th>
+                    <th scope="col">Dirección de la Sede</th>
+                    <th scope="col">Email de la Sede</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for sede in sedes %}
+                <tr class="table-success text-center">
+                    <td>{{ sede.id_localidad }}</td>
+                    <td>{{ sede.telefono_sede }}</td>
+                    <td>{{ sede.direccion_sede }}</td>
+                    <td>{{ sede.email_sede }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <h3>No se encontró la Sede</h3>
+    {% endif %}
+</div>
+
+{% endblock %}

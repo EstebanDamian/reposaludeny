@@ -1,0 +1,61 @@
+{% extends 'AppSalud/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Números de Turnos
+{% endblock title %}
+
+{% block codigoDinamico %}
+<body style='background-color: #f1e5db;'>
+    <div class="container">
+        <br>
+        <h1><u>Todos los Turnos</u></h1>
+        <br>
+        <div class="container" style="background-color:#eb6864;">
+            <table class="table table-active text-center">
+                <thead>
+                    <tr>
+                        <th scope="col">Turno N°:</th>
+                        <th scope="col">Fecha:</th>
+                        <th scope="col">Hora:</th>
+                        <th scope="col">DNI (paciente):</th>
+                        <th scope="col">Nombre:</th>
+                        <th scope="col">Apellido:</th>
+                        <th scope="col">Acciones:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for turno in numero_de_turno %}
+                    <tr class="table-success text-center">
+                        <td>{{ turno.id_turno }}</td>
+                        <td>{{ turno.fecha|date:"d/m/Y" }}</td>
+                        <td>{{ turno.hora|date:"H:i" }}</td>
+                        <td>{{ turno.id_dni_paciente.id_dni }}</td>
+                        <td>{{ turno.id_dni_paciente.nombre_paciente }}</td>
+                        <td>{{ turno.id_dni_paciente.apellido_paciente }}</td>
+                        <td>
+                            <button type="button" class="btn btn-outline-warning">
+                                <a href="{% url 'Actualizar_Turno' turno_id=turno.id_turno %}" style='color: orange;'>Actualizar Turno</a>
+                            </button>
+                            <button type="button" class="btn btn-outline-primary">
+                                <a href="{% url 'Eliminar_Turno' turno_id=turno.id_turno %}" style='color: red;'>Eliminar Turno</a>
+                            </button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="container">
+            <button type="button" class="btn btn-outline-success">
+                <a href="{% url 'Crear_Turno' %}" style='color: green;'>Crear Turno</a>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button type="button" class="btn btn-outline-info">
+                <a href="{% url 'Buscar_Turno' %}" style='color: #337ab7;'>Buscar Turno</a>
+            </button>
+        </div>
+    </div>
+</body>
+{% endblock %}

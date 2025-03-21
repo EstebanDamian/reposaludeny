@@ -1,0 +1,52 @@
+{% extends "AppSalud/base.html" %}
+{% load static %}
+
+{% block title %}
+    Localidades
+{% endblock title %}
+
+{% block codigoDinamico %}
+
+<div class="container"> 
+    <h1><u>Nuestras Localidades</u></h1>
+    <br>
+    <div class="container" style="background-color:#eb6864;">
+        <table class="table table-active text-center">
+            <thead>
+                <tr>
+                    <th scope="col">Localidad</th>
+                    <th scope="col">Provincia</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for localidad in localidad %}
+                <tr class="table-secondary text-center">
+                    <td>{{ localidad.localidad }}</td>
+                    <td>{{ localidad.provincia }}</td>
+                    <td>
+                        <button type="button" class="btn btn-outline-warning">
+                            <a href="{% url 'Actualizar_Localidad' localidad=localidad.localidad %}" style='color: orange;'>Actualizar Localidad</a>
+                        </button>
+                        <button type="button" class="btn btn-outline-primary">
+                            <a href="{% url 'Eliminar_Localidad' localidad=localidad.localidad %}" style='color: red;'>Eliminar Localidad</a>
+                        </button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <div class="container">
+        <button type="button" class="btn btn-outline-success">
+            <a href="{% url 'Crear_Localidades' %}" style='color: green;'>Nueva Localidad</a>
+        </button>
+        &nbsp;&nbsp;&nbsp;
+        <button type="button" class="btn btn-outline-info">
+            <a href="{% url 'Buscar_Localidad' %}" style='color: #337ab7;'>Buscar Localidad</a>
+        </button>
+    </div>
+</div>
+
+{% endblock %}

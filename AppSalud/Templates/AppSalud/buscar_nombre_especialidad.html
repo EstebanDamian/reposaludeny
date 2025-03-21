@@ -1,0 +1,41 @@
+{% extends 'AppSalud/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Buscar Especialidad
+{% endblock title %}
+
+{% block codigoDinamico %}
+
+<div class="container">
+    <br> <br> 
+    <form action="" method="get">
+
+        <input type="text" name="nombre_especialidad" id="nombre especialidad2" 
+            placeholder="Nombre de la Especialidad">
+    <br> <br>
+        <input type="submit" value="Buscar Especialidad por Nombre" class="btn btn-outline-info">
+    </form>
+
+    <br><br>
+
+    {% if especialidades %}
+        
+        {% for especialidad in especialidades %}
+            <table class="table table-active text-center">
+                <th scope="col">Nombre de Especialidad:</th>
+                
+                <tr class="table-success text-center">
+                    <td>{{especialidad.nombre_especialidad}}</td>
+                </tr>
+            </table>
+        {% endfor %}       
+    {% else %}
+
+            <h3>No Se Encontro la Especialidad</h3>
+    {% endif %}
+</div>
+
+
+{% endblock %}

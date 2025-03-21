@@ -1,0 +1,50 @@
+{% extends 'AppSalud/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Buscar N° de Turno
+{% endblock title %}
+
+{% block codigoDinamico %}
+
+<div class="container">
+    <br> <br> 
+    <form action="" method="get">
+
+        <input type="text" name="id_turno" id="numero turno" 
+            placeholder="9000">
+    <br> <br>
+        <input type="submit" value="Buscar N° Turno" class="btn btn-outline-info">
+    </form>
+
+    <br><br>
+
+    {% if turnos %}
+        
+        {% for turnos in turnos %}
+        <table class="table table-active text-center">
+            <th scope="col">Turno N°:</th>
+            <th scope="col">Fecha:</th>
+            <th scope="col">Hora:</th>
+            <th scope="col">DNI(paciente):</th>
+            <th scope="col">Nombre:</th>
+            <th scope="col">Apellido:</th>
+            <tr class="table-success text-center">
+                <td>{{turnos.id_turno}}</td>
+                <td>{{turnos.fecha|date:"d/m/Y"}}</td>
+                <td>{{turnos.hora}}</td>
+                <td>{{turnos.id_dni_paciente.id_dni}}</td>
+                <td>{{turnos.id_dni_paciente.nombre_paciente}}</td>
+                <td>{{turnos.id_dni_paciente.apellido_paciente}}</td>
+            </tr>
+        </table>
+        {% endfor %}       
+    {% else %}
+
+            <h3>No Se Encontro el Turno</h3>
+    {% endif %}
+</div>
+
+
+{% endblock %}

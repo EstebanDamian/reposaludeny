@@ -1,0 +1,49 @@
+{% extends 'AppSalud/base.html' %}
+
+{% load static %}
+
+    {% block title %}
+        Sistemas de Turnos
+    {% endblock title %}
+
+{% block codigoDinamico %}
+<body>
+    <div class="container" >
+        <br>
+        <h1><u>Sistema de Turnos</u></h1>
+        <br>
+        {% for sistema in sistema %}
+        <br>
+        <div class="container" style="background-color:#eb6864;">
+            <table class="table table-active text-center">
+                <th scope="col">N° de turno:</th>
+                <th scope="col">Fecha:</th>
+                <th scope="col">Hora:</th>
+                <th scope="col">N° de Consultorio:</th>
+                <th scope="col">Sede de Atencion:</th>
+                <th scope="col">N° DNI:</th>
+                <th scope="col">Nombre(Paciente):</th>
+                <th scope="col">Apellido(Paciente):</th>
+                <th scope="col">Especialidad:</th>
+                <th scope="col">Nombre(Medico):</th>
+                <th scope="col">Apellido(Medico):</th>
+                <tr class="table-success text-center">
+                    <td>{{sistema.id_numero_de_turno.id_turno}}</td>
+                    <td>{{sistema.id_numero_de_turno.fecha|date:"d/m/Y"}}</td>
+                    <td>{{sistema.id_numero_de_turno.hora|date:"h:i"}}</td>
+                    <td>{{sistema.id_numero_de_turno.id_numero_de_consultorio.id_numero}}</td>
+                    <td>{{sistema.id_dni_paciente.id_localidad.localidad}}</td>
+                    <td>{{sistema.id_dni_paciente.id_dni}}</td>
+                    <td>{{sistema.id_dni_paciente.nombre_paciente}}</td>
+                    <td>{{sistema.id_dni_paciente.apellido_paciente}}</td>
+                    <td>{{sistema.id_especialidad.nombre_especialidad}}</td>
+                    <td>{{sistema.id_medico.nombre_medico}}</td>
+                    <td>{{sistema.id_medico.apellido_medico}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+{% endfor %}
+
+{% endblock %}

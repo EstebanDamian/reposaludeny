@@ -1,0 +1,52 @@
+{% extends 'AppSalud/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Buscar Medico
+{% endblock title %}
+
+{% block codigoDinamico %}
+
+<div class="container">
+    <br> <br> 
+    <form action="" method="get">
+
+        <input type="text" name="nombre_medico" id="nombre medico2"
+            placeholder="Nombre del Medico">
+    <br> <br>
+        <input type="submit" value="Buscar Medico por Nombre" class="btn btn-outline-info">
+    </form>
+
+    <br><br>
+
+    {% if medicos %}
+        
+        {% for medico in medicos %}
+            <table class="table table-active text-center">
+                <th scope="col">ID:</th>
+                <th scope="col">Especialidad:</th>
+                <th scope="col">Nombre:</th>
+                <th scope="col">Apellido:</th>
+                <th scope="col">DNI N°:</th>
+                <th scope="col">Matricula:</th>
+                <th scope="col">Sede de Atencion:</th>
+                <tr class="table-success text-center">
+                    <td>{{medico.id}}</td>
+                    <td>{{medico.id_especialidad.nombre_especialidad}}</td>
+                    <td>{{medico.nombre_medico}}</td>
+                    <td>{{medico.apellido_medico}}</td>
+                    <td>{{medico.dni_medico}}</td>
+                    <td>{{medico.id_matricula.matricula}}</td>
+                    <td>{{medico.id_sede.id_localidad.localidad}}</td>
+                </tr>
+            </table>
+        {% endfor %}       
+    {% else %}
+
+            <h3>No Se Encontro Medico</h3>
+    {% endif %}
+</div>
+
+
+{% endblock %}

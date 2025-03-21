@@ -1,0 +1,818 @@
+/*Centrar el formulario vertical y horizontalmente*/
+.form-container{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    min-height: 100vh; /*Ocupa toda la altura de la pantalla*/
+}
+
+/*Ajustar el ancho de la cajas de texto*/
+.form-container form{
+    width: 100%;
+    max-width: 400px;
+
+}
+
+
+header {
+    background-image: url('hospital.jpg');
+    background-size: auto 100%; /* Ajusta la imagen para que tenga un ancho automático y cubra toda la altura */
+    background-position: left center; /* Coloca la imagen en el lado izquierdo y centrada verticalmente */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    color: bisque;
+    font-size: 300%;
+    text-align: center;
+    height:min-content; /* Ajusta la altura según sea necesario */
+    padding-top: 20px;
+    border-style:groove;
+}
+
+.pasillo {
+    background-image: url('doclogeando.jpg');
+    background-size: auto 100%;
+    background-position: right;
+    background-repeat: no-repeat;
+    color: bisque;
+    height: 371px;
+    max-width: 1800px;
+    padding-top: 0px;
+}
+.pasillo h1{
+    
+    margin-left: 260px;
+    
+}
+.pasillo h3{
+    margin-left: 260px;
+}
+
+body {
+    background-image: url('salud.jpg');
+            background-size: 50%; /* Ajusta la imagen para cubrir todo el fondo */
+            background-position: center ; /* Centra la imagen */
+            background-repeat: no-repeat;
+    background-color: rgb(255, 255, 255);
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-attachment:fixed;
+    
+}
+footer{
+    background-color: rgb(207, 138, 176);
+}
+main {
+    background-color: rgb(15, 92, 128);
+    padding: 0px;
+}
+.navbar-brand{
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    text-shadow: 15px 15px 4px rgba(0, 0, 0, 0.5); 
+    font-family:'Courier New', Courier, monospace;
+}
+
+.navbar {
+    background-color: rgb(138, 200, 27);
+    padding: -10px;
+    animation: slideInUp 1s ease-in-out;
+}
+@keyframes fadeInSlide {
+    0% {
+        opacity: 0; /* Comienza completamente transparente */
+        transform: translateY(-40px); /* Comienza desplazado hacia arriba */
+    }
+    100% {
+        opacity: 1; /* Termina completamente visible */
+        transform: translateY(); /* Termina en su posición original */
+    }
+}
+@keyframes slideInUp {
+    0% {
+        opacity: 0; /* Comienza completamente transparente */
+        transform: translateY(20px); /* Comienza desplazado hacia abajo */
+    }
+    100% {
+        opacity: 1; /* Termina completamente visible */
+        transform: translateY(0); /* Termina en su posición original */
+    }
+}
+.nav-item{
+    background-color: #007bff;
+    text-align:unset;
+    border: 1px solid #000000;
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 4px 4px 6px rgba(2, 2, 2, 0.993);
+
+}
+.navbar {
+    background-color: #13a031; /* Color de fondo oscuro */
+    transition: background-color 0.3s; /* Transición suave */
+    display: flex; /* Usar flexbox */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    height: 30%; /* Altura de la barra de navegación */
+}
+
+.navbar:hover {
+    background-color: #8dc91c; /* Color de fondo al pasar el mouse */
+}
+
+.nav-link {
+    color: #ffffff; /* Color del texto */
+    transition: color 0.3s; /* Transición suave */
+    display: flex; /* Usar flexbox para centrar el texto */
+    align-items: center; /* Centrar verticalmente el texto */
+    height: 100%;
+    padding: auto;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.nav-link:hover {
+    color: #0f0f0f; /* Color del texto al pasar el mouse */
+    background-color: #ffffff;
+}
+.nav-link1 {
+    color: #ffffff; /* Color del texto */
+    transition: color 0.3s; /* Transición suave */
+    display: flex; /* Usar flexbox para centrar el texto */
+    align-items: center; /* Centrar verticalmente el texto */
+    height: 100%;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    
+}
+
+.nav-link1:hover {
+    color: #fd0000; /* Color del texto al pasar el mouse */
+    background-color: #ffffff;
+}
+
+.container {
+    margin-top: 5px; /* Espaciado superior */
+}
+.navbar-nav {
+    justify-content: right; /* Centra los elementos horizontalmente */
+    width: 100%; /* Asegúrate de que ocupe todo el ancho */
+    display: flex; /* Usar flexbox */
+    
+}
+
+.nav-item {
+    margin: 0 1px; /* Espaciado entre los elementos */
+}
+.nav-item1 {
+    margin: 0 1px; /* Espaciado entre los elementos */
+}
+.nav-item1{
+    background-color: rgb(247, 58, 68);
+    padding: auto;
+    text-align:unset;
+}
+
+h1 {
+    color: transparent; /* Hace que el texto sea transparente */
+    background: linear-gradient(0deg, #020457, #096b16); /* Gradiente como fondo del texto */
+    -webkit-background-clip: text; /* Aplica el fondo solo al texto (para navegadores basados en Webkit) */
+    background-clip: text; /* Aplica el fondo solo al texto */
+    font-size: 36px;
+    text-shadow: 15px 15px 4px rgba(0, 0, 0, 0.5); /* Sombra suave para el texto */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center; /* Centra el texto */
+    background-color: #131212; /* Fondo del h1 */
+    -webkit-background-clip: text; /* Aplica el fondo solo al texto (para navegadores basados en Webkit) */
+    background-clip: text;
+}
+
+h3{
+    color: transparent; /* Color del texto */
+    background: linear-gradient(0deg, #020457, #087408);
+    background-clip: text; /* Hace que el fondo se aplique solo al texto */
+    font-size: 20px;
+    text-shadow: 15px 15px 4px rgba(0, 0, 0, 0.5); 
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #0f0f0f;
+}
+
+/* Estilo para el bloque flotante */
+.floating-login {
+    position: fixed; /* Hace que el bloque se quede fijo al hacer scroll */
+    bottom: 50px; /* Distancia desde la parte inferior de la ventana */
+    right: 50px; /* Distancia desde el borde derecho de la ventana */
+    background-color: #13a031; /* Color de fondo del bloque */
+    padding: 5px 10px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 4px 4px 6px rgba(2, 2, 2, 0.993); /* Sombra suave para destacar */
+    z-index: 1000; /* Asegura que el bloque quede encima de otros elementos */
+    text-shadow: 2px #000000;
+}
+
+.floating-login button {
+    background-color: #007bff; /* Color de fondo del botón */
+    color: #eaecec; /* Color del texto del botón */
+    border: 2px solid #000000; /* Borde del botón */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    font-size: 16px; /* Tamaño del texto del botón */
+    border-radius: 5px; /* Bordes redondeados del botón */
+    cursor: pointer; /* Cambia el cursor a puntero para indicar que es un enlace */
+    transition: background-color 0.3s, color 0.3s; /* Transición para hover */
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    
+}
+
+/* Efecto hover para el botón */
+.floating-login button:hover {
+    background-color: #f8f9fa; /* Fondo azul cuando se pasa el mouse */
+    color: #0c0101; /* Color del texto blanco */
+}
+.registrate{
+    font-size: 16px;
+    color: #fffdfd;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow:1px 1px 1px rgba(8, 8, 8, 0.966);
+    background-clip: text;
+}
+.inicia{
+    font-size: 16px;
+    color: #f8f5f5;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow:1px 1px 1px rgba(5, 4, 4, 0.966);
+    background-clip: text;
+}
+
+.container1 {
+    color: #020000;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.966);
+    text-align: center;
+    text-indent: 0%;
+    letter-spacing: -0.5px; /* Ajusta el espaciado entre letras */
+    line-height: 10px; /* Ajusta el espaciado entre líneas */
+    background-color: #349bf0;
+}
+.nombre{
+    color: #000000;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.966);
+    text-align: center;
+    text-indent: 0%;
+    letter-spacing: -0.5px; /* Ajusta el espaciado entre letras */
+    line-height: 5px; /* Ajusta el espaciado entre líneas */
+    
+}
+
+#video1{
+        margin-top: 5px;
+        margin-left: 260px;
+        border: 2px solid #068121;
+        border-radius:#000000 5px; /* Bordes redondeados */
+        box-shadow: 2px 4px 15px rgba(150, 187, 14, 0.3); /* Sombra */
+        max-width: 50%; /* Asegura que el video no exceda el ancho del contenedor */
+        outline: none; /* Elimina el contorno al hacer clic */
+    
+}
+
+.nuestrasCoberturas {
+    border: 2px solid #000000;
+    color: #179e40;
+    
+}
+.nuestrasCoberturas h2{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: linear-gradient(0deg, #020457, #087408);
+    color:white;
+    transition: transform 0.3s ease;
+    text-align: center; /* Centra el texto */
+    text-shadow:2px 2px 2px #000000;
+}
+
+.nuestrasCoberturas img {
+    height: 80px;
+    width: 180px;
+    border: 2px solid #000000;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    margin-left: 30px;
+    border-color: #007bff #068121;
+    transition: transform 0.3s ease; /* Añade una transición suave */
+    
+}
+
+.nuestrasCoberturas img:hover {
+    transform: scale(1.1); /* Aumenta el tamaño de la imagen al 110% */
+}
+
+.nuestrasEspecialidades{
+    text-align: left;
+    color: #ecebeb;
+    margin: 5px;
+    display: flex;
+    border: 2px solid #000000;
+    
+    
+}
+.seryesp {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: linear-gradient(0deg, #020457, #087408);
+    color:white;
+    transition: transform 0.3s ease;
+    text-align: center; /* Centra el texto */
+}
+
+.especialidades1, .especialidades2, .especialidades3{
+    margin: 40px 80px 80px 80px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 28px;
+    background:transparent linear-gradient(0deg, #1c72b9, #8ac81b);
+    border-radius: 10px;
+    text-shadow: 4px 4px 4px #030303;
+    box-shadow: 4px 4px 6px rgba(3, 3, 3, 0.993);
+    text-align: center;
+}
+
+li {
+    transition: transform 0.3s;
+    cursor:default;
+}
+
+li:hover {
+    transform: scale(1.1);
+    background-color: #0b801a;
+    border-radius: 10px;
+}
+
+.details {
+    display: none;
+    position: absolute;
+    background-color: #1c72b9; /* Fondo negro */
+    color: #f3f3f3; /* Texto blanco */
+    border: 2px solid #000000;
+    border-radius: 5px;
+    padding: 10px;
+    top: 50%; /* Centrado verticalmente */
+    left: 100%; /* A la derecha del elemento */
+    transform: translateY(-50%); /* Ajuste para centrar verticalmente */
+    z-index: 10;
+    width: 200px;
+    font-size: 14px;
+    text-shadow: 2px 2px 2px #000000;
+}
+
+li:hover .details {
+    display: block;
+}
+.especialidades3 .details {
+    right: 100%; /* A la izquierda del elemento */
+    left: auto; /* Asegurarse de que no se aplique otra regla */
+}
+
+h2{
+    text-align: center;
+    
+}
+
+
+.login-container {
+    background: transparent;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.loading {
+    text-align: left;
+    margin: 10px;
+    background-color: transparent;
+}
+
+.loading img{
+    width: 60px;
+    height: 60px;
+    margin-left: 175px;
+    
+    
+}
+
+.login-container {
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+    min-height: 100vh;
+    border-color: 2px #000000;
+}
+
+
+.login-box {
+    background: linear-gradient(10deg, #79dbbb, #ffffff);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+    border-color: 2px #000000;
+}
+
+.doctor-image {
+    margin-bottom: 20px;
+}
+
+.doctor-image img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    animation: bounce 2s infinite;
+}
+
+h2 {
+    font-size: 24px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.login-button {
+    background-color: #27b8e9;
+    color: rgb(2, 2, 2);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #2f80ed;
+    transform: scale(1.1);
+}
+
+.loading {
+    margin-top: 20px;
+}
+
+.signup-link {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.signup-link a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s;
+    background: #000000;
+    border-radius: 1px;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.carousel-item img {
+        max-width: 60%; /* Ajusta el tamaño de las imágenes a un 80% de su contenedor */
+        max-height: 30%; /* Limita la altura máxima de las imágenes */
+        height: 450px;
+        object-fit: cover; /* Mantiene la relación de aspecto sin distorsionar la imagen */
+    }
+
+    /* Centramos el carrusel */
+    #carouselExampleIndicators {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        object-fit: cover; /* Mantiene la relación de aspecto sin distorsionar la imagen */
+    }
+
+    /* Establecemos la anchura máxima de las imágenes */
+    .carousel-inner {
+        width: 100%;
+    }
+
+    /* Ajustamos el tamaño de los controles de navegación */
+    .carousel-control-prev-icon, .carousel-control-next-icon {
+        background-color: black; /* Cambia el color de los controles de navegación */
+        border-radius: 50%;
+        border-color: #007bff;
+    }
+
+.titulo{
+    background: transparent;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    border-color: 2px #000000;
+    border: 2px solid #000000;
+    
+}
+.titulo h2{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: linear-gradient(0deg, #020457, #087408);
+    color:white;
+    transition: transform 0.3s ease;
+    text-align: center; /* Centra el texto */
+    text-shadow:2px 2px 2px #050505;
+    }
+
+    .titulo p{
+        color: #ffffff;
+        background-color: #184901;
+        text-align: center;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        padding: 0px;
+        margin: 0px;
+        text-shadow: 2px 2px 2px #000000;
+    }
+
+/* Estilo base para los cards */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    border-color: #ffffff;
+}
+
+
+.card-body {
+    padding: 20px;
+}
+
+.paso {
+    padding: 30px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #f8f9fa;
+}
+
+/* Efecto hover para los cards */
+.card:hover {
+    transform: translateY(-10px); /* Eleva el card */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra más fuerte */
+}
+
+/* Efectos para los pasos */
+.paso:hover {
+    background-color: #6c757d; /* Cambia el color del fondo al pasar el mouse */
+    transform: scale(1.05); /* Hace que el card se agrande un poco */
+}
+
+/* Efectos por color de cada paso */
+.bg-primary {
+    background: linear-gradient(50deg, #022892, #09bd21)!important;
+}
+
+.bg-success {
+    background-color: #09bd21 !important;
+}
+
+.bg-danger {
+    background: linear-gradient(50deg, #09bd21, #022892)!important;
+}
+
+/* Agregar animación de aparición al cargar la página */
+.como-funciona .card {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 0.6s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Añadir retrasos para los elementos para un efecto en cadena */
+.como-funciona .card:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.como-funciona .card:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.como-funciona .card:nth-child(3) {
+    animation-delay: 0.6s;
+}
+.como-funciona {
+    background: linear-gradient(15deg, #080808, #021342, #000000)!important;
+    padding: 20px; /* Espaciado interno */
+    border-width: 2px; /* Grosor del borde */
+    border-style: solid; /* Estilo del borde (puede ser dashed, dotted, etc.) */
+    border-color: #080707; /* Color del borde blanco */
+    border-radius: 10px; /* Bordes redondeados (opcional) */
+    color: #000000;
+}
+
+
+.como-funciona h3{
+    color: #000000;
+    text-shadow: 2px 2px 2px #ffffff;
+    border-color:  #000000;
+}
+
+.como-funciona p{
+    color: #ffffff;
+    text-shadow:1px 1px 1px #000000;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.como-funciona h2{
+    color: #4e8ae4;
+    text-shadow: 1px 1px 1px #ffffff;
+    border-color:  #000000;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 32px;
+}
+
+.faq {
+    background: linear-gradient(15deg, #8bb9e7, #ffffff, #8bb9e7); /* Color de fondo suave */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.card {
+    transition: transform 0.2s, box-shadow 0.2s; /* Transición suave para animación */
+}
+
+.card:hover {
+    transform: scale(1.02); /* Escala al pasar el mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más intensa al pasar el mouse */
+}
+
+.btn-link {
+    color: #0a0b0c; /* Color de texto del botón */
+    text-decoration: none; /* Sin subrayado */
+    text-shadow: #000000;
+    background-color: rgb(98, 210, 214);
+}
+
+.btn-link:hover {
+    text-decoration: underline; /* Subrayado al pasar el mouse */
+}
+.contacto{
+    background-color: linear-gradient(15deg, #8bb9e7, #ffffff, #8bb9e7);
+    padding: 1px;
+}
+.contacto h2{
+    color: #ffffff;
+    background-color: #000000;
+    text-shadow:2px 2px 2px #020457;
+    font-size: 32px;
+    
+}
+
+.btn-flotante {
+    position: fixed;
+    bottom: -100px; /* Comienza fuera de la vista */
+    left: 20px; /* Distancia desde el lado izquierdo de la página */
+    color: rgb(0, 0, 0); /* Color del texto */
+    padding: 5px 5px; /* Espaciado interno */
+    border-radius: 1px; /* Bordes redondeados */
+    text-decoration: none; /* Sin subrayado */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra para el botón */
+    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+    animation: slideIn 1s forwards; /* Aplica la animación */
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+@keyframes slideIn {
+    from {
+        bottom: -100px; /* Comienza fuera de la vista */
+    }
+    to {
+        bottom: 40px; /* Posición final */
+    }
+}
+
+.btn-flotante:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el mouse */
+    transform: scale(1.10);
+}
+
+    
+.btn-flotante img {
+    max-width: 50px; /* Limita el ancho máximo */
+    max-height: 50px; /* Limita la altura máxima */
+    width: auto; /* Mantiene el ancho original hasta el máximo */
+    height: auto; /* Mantiene la altura original hasta el máximo */
+}
+
+footer{
+    background-color: #000000;
+    color: white;
+    padding: 20px 0px;
+}
+
+footer h5{
+    font-size: 16px;
+}
+
+footer ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+footer ul li{
+    margin-bottom: 10px;
+
+}
+
+footer ul li a{
+    color: white;
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para la tabla */
+.table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px 0;
+    font-size: 1rem;
+    text-align: left;
+    background-color: #ffffff;
+    transition: transform 0.2s; /* Animación al hacer hover */
+}
+
+.table th, .table td {
+    padding: 12px;
+    border: 1px solid #dddddd;
+}
+
+.table th {
+    background-color: #eb6864;
+    color: white;
+}
+
+.table tr:hover {
+    transform: scale(1.02); /* Efecto de zoom al pasar el mouse */
+    background-color: #f1c6c0; /* Color de fondo al hacer hover */
+}
+
+/* Botones */
+.btn a {
+    text-decoration: none;
+    color: inherit; /* Hereda el color del botón */
+}
+
+/* Estilo para el contenedor de botones */
+.btn-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.col-md-4{
+    color: white;
+    text-align: center;
+    padding: 2px;
+    font-size: 16px;
+    background-origin: padding-box;
+}
+
+.col-md-4 h5{
+    color: #000000;
+    background-color: white;
+    text-shadow: 2px 2px 2px #007bff;
+    font-size: 20px;
+    
+}

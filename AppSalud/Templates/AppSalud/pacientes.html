@@ -1,0 +1,57 @@
+{% extends 'AppSalud/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Pacientes
+{% endblock title %}
+
+{% block codigoDinamico %}
+
+<div class="container">
+    <br>
+    <h1><u>Lista de Pacientes</u></h1>
+    <br>
+    <div class="container">
+        <table class="table table-active text-center">
+            <thead>
+                <tr>
+                    <th scope="col">DNI N°:</th>
+                    <th scope="col">Nombre:</th>
+                    <th scope="col">Apellido:</th>
+                    <th scope="col">Fecha de Nacimiento:</th>
+                    <th scope="col">Sexo:</th>
+                    <th scope="col">Localidad:</th>
+                    <th scope="col">Provincia:</th>
+                    <th scope="col">Acciones:</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for paciente in paciente %}
+                <tr class="table-success text-center">
+                    <td>{{ paciente.id_dni }}</td>
+                    <td>{{ paciente.nombre_paciente }}</td>
+                    <td>{{ paciente.apellido_paciente }}</td>
+                    <td>{{ paciente.fecha_nacimiento|date:"d/m/Y" }}</td>
+                    <td>{{ paciente.sexo_paciente }}</td>
+                    <td>{{ paciente.id_localidad.localidad }}</td>
+                    <td>{{ paciente.id_localidad.provincia }}</td>
+                    <td>
+                        <a href="{% url 'Actualizar_Paciente' paciente_id=paciente.id_dni %}" class="btn btn-outline-warning" style="color: orange;">Actualizar</a>
+                        <a href="{% url 'Eliminar_Paciente' paciente_id=paciente.id_dni %}" class="btn btn-outline-danger" style="color: red;">Eliminar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <div class="container">
+        <a href="{% url 'crear_paciente' %}" class="btn btn-outline-success" style="color: green;">Crear Paciente</a>
+        &nbsp;&nbsp;&nbsp;
+        <a href="{% url 'Buscar_Paciente' %}" class="btn btn-outline-info" style="color: #337ab7;">Buscar Paciente</a>
+    </div>
+</div>
+
+{% endblock %}
+

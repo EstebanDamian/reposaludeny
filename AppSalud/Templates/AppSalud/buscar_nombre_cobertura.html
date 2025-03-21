@@ -1,0 +1,44 @@
+{% extends 'AppSalud/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Buscar Cobertura
+{% endblock title %}
+
+{% block codigoDinamico %}
+
+<div class="container">
+    <br><br> 
+    <form action="" method="get">
+        <input type="text" name="nombre_cobertura" id="nombre_cobertura" 
+            placeholder="Nombre de la Cobertura">
+        <br><br>
+        <input type="submit" value="Buscar Cobertura por Nombre" class="btn btn-outline-info">
+    </form>
+
+    <br><br>
+
+    {% if coberturas %}
+        <table class="table table-active text-center">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre Cobertura:</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                {% for cobertura in coberturas %}
+                <tr class="table-success text-center">
+                    <td>{{ cobertura.nombre_cobertura }}</td>
+                    
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>      
+    {% else %}
+        <h3>{{ respuesta }}</h3>
+    {% endif %}
+</div>
+
+{% endblock %}
